@@ -1,0 +1,725 @@
+### See https://github.com/be5invis/Iosevka/blob/master/doc/custom-build.md for comprehensive
+### documentation of the options in this file
+
+[buildPlans.IosevkaClassy]      # <IosevkaCustom> is your plan name
+family = "Iosevka Classy"        # Font menu family name
+spacing = "term"               # Optional; Values: `normal`, `term`, `fontconfig-mono`, or `fixed`
+serifs = "sans"                  # Optional; Values: `sans` or `slab`
+exportGlyphNames = true       # Set this to true for ligature support in Kitty (increased file size)
+
+webfontFormats = ['TTF', 'WOFF2']
+
+[buildPlans.IosevkaClassy.metricOverride]
+leading = 1100
+xHeight = 550
+
+###################################################################################################
+# Configure variants
+
+# Optional; Whether to inherit a `ss##` variant
+# [buildPlans.IosevkaClassy.variants]
+# inherits = "ss01"
+
+# Optional; Configure single character's variant
+# [buildPlans.IosevkaClassy.variants.design]
+# g = 'single-storey-serifless'
+
+# Optional; Configure single character's variant for Upright and Oblique; Overrides [design]
+# [buildPlans.IosevkaClassy.variants.upright]
+# i = 'zshaped'
+# l = 'zshaped'
+
+# Optional; Configure single character's variant for Italic only; Overrides [design]
+# [buildPlans.IosevkaClassy.variants.italic]
+# i = 'tailed-serifed'
+# l = 'tailed-serifed'
+
+# End variant section
+###################################################################################################
+
+###################################################################################################
+# Configure ligations
+
+[buildPlans.IosevkaClassy.ligations]
+inherits = "dlig"   # Optional; inherits an existing ligation set
+
+[buildPlans.IosevkaClassy.variants.design]
+one = "no-base"
+two = "curly-neck-serifless"
+three = "flat-top-serifless"
+four = "closed-serifless"
+five = "upright-arched-serifless"
+six = "closed-contour"
+seven = "straight-serifless"
+eight = "two-circles"
+nine = "closed-contour"
+zero = "slashed"
+
+capital-a = "curly-serifless"
+capital-b = "standard-serifless"
+capital-c = "serifless"
+capital-d = "more-rounded-serifless"
+capital-e = "serifless"
+capital-f = "serifless"
+capital-g = "toothed-serifless-hooked"
+capital-h = "serifless"
+capital-i = "short-serifed"
+capital-j = "serifed"
+capital-k = "curly-serifless"
+capital-l = "serifless"
+capital-m = "flat-bottom-serifless"
+capital-n = "standard-serifless"
+capital-p = "closed-serifless"
+capital-q = "straight"
+capital-r = "curly-serifless"
+capital-s = "serifless"
+capital-t = "serifless"
+capital-u = "toothless-rounded-serifless"
+capital-v = "curly-serifless"
+capital-w = "straight-serifless"
+capital-x = "curly-serifless"
+capital-y = "curly-serifless"
+capital-z = "curly-serifless"
+
+a = "double-storey-serifless"
+b = "toothed-serifless"
+c = "serifless"
+d = "toothed-serifless"
+e = "flat-crossbar"
+f = "serifless"
+g = "double-storey"
+h = "straight-serifless"
+i = "serifed" 
+j = "serifed"
+k = "curly-serifless"
+l = "serifed"
+m = "serifless"
+n = "straight-serifless"
+p = "eared-serifless"
+q = "straight-serifless"
+r = "serifless"
+s = "serifless"
+t = "bent-hook"
+u = "toothed-serifless"
+v = "curly-serifless"
+w = "straight-serifless"
+x = "curly-serifless"
+y = "curly-serifless"
+z = "curly-serifless"
+
+# TODO: add cyrillic
+
+tittle = "round"
+punctuation-dot = "round"
+
+tilde = "low"
+asterisk = "penta-high"
+underscore = "high"
+caret = "high"
+ascii-grave = "straight"
+ascii-single-quote = "straight"
+
+paren = "normal"
+brace = "curly"
+
+guillemet = "straight"
+number-sign = "upright"
+ampersand = "closed"
+at = "threefold"
+dollar = "interrupted"
+cent = "through"
+percent = "rings-continuous-slash"
+bar = "natural-slope"
+question = "smooth"
+
+lig-ltgteq = "flat"
+lig-neq = "slightly-slanted"
+lig-equal-chain = "with-notch"
+lig-hyphen-chain = "with-notch"
+lig-plus-chain = "without-notch"
+lig-double-arrow-bar = "with-notch"
+lig-single-arrow-bar = "without-notch"
+
+[buildPlans.IosevkaClassy.variants.italic]
+a = "single-storey-tailed"
+e = "rounded"
+f = "tailed"
+g = "single-storey-serifless"
+k = "cursive-serifless"
+l = "tailed-serifed"
+
+# End ligation section
+###################################################################################################
+
+
+###################################################################################################
+# Override default building weights
+# When buildPlans.<plan name>.weights is absent, all weights would built and mapped to
+# default values.
+# IMPORTANT : Currently "menu" and "css" property only support numbers between 0 and 1000.
+#             and "shape" properly only supports number between 100 and 900 (inclusive).
+#             If you decide to use custom weights you have to define all the weights you
+#             plan to use otherwise they will not be built.
+
+[buildPlans.IosevkaClassy.weights.Light]
+shape = 300  # Weight for glyph shapes.
+menu  = 300  # Weight for the font's names.
+css   = 300  # Weight for webfont CSS.
+
+[buildPlans.IosevkaClassy.weights.Regular]
+shape = 400  # Weight for glyph shapes.
+menu  = 400  # Weight for the font's names.
+css   = 400  # Weight for webfont CSS.
+#
+[buildPlans.IosevkaClassy.weights.Book]
+shape = 450
+menu  = 450  # Use 450 here to name the font's weight "Book"
+css   = 450
+
+[buildPlans.IosevkaClassy.weights.SemiBold]
+shape = 600
+menu  = 600
+css   = 600
+#
+[buildPlans.IosevkaClassy.weights.Bold]
+shape = 700
+menu  = 700
+css   = 700
+
+# End weight section
+###################################################################################################
+
+###################################################################################################
+# Override default building slope sets
+# When this section is absent, all slopes would be built.
+
+# [buildPlans.IosevkaClassy.slopes.Upright]
+# angle = 0             # Angle in degrees. Valid range [0, 15]
+# shape = "upright"     # Slope grade used for shape selection.  `upright` | `oblique` | `italic`
+# menu  = "upright"     # Slope grade used for naming.           `upright` | `oblique` | `italic`
+# css   = "normal"      # Slope grade used for webfont CSS.      `normal`  | `oblique` | `italic`
+#
+# [buildPlans.IosevkaClassy.slopes.Oblique]
+# angle = 9.4
+# shape = "oblique"
+# menu  = "oblique"
+# css   = "oblique"
+#
+# [buildPlans.IosevkaClassy.slopes.Italic]
+# angle = 9.4
+# shape = "italic"
+# menu  = "italic"
+# css   = "italic"
+# End slope section
+###################################################################################################
+
+###################################################################################################
+# Override default building widths
+# When buildPlans.<plan name>.widths is absent, all widths would built and mapped to
+# default values.
+# IMPORTANT : Currently "shape" property only supports numbers between 434 and 664 (inclusive),
+#             while "menu" only supports integers between 1 and 9 (inclusive).
+#             The "shape" parameter specifies the unit width, measured in 1/1000 em. The glyphs'
+#             width are equal to, or a simple multiple of the unit width.
+#             If you decide to use custom widths you have to define all the widths you plan to use,
+#             otherwise they will not be built.
+
+[buildPlans.IosevkaClassy.widths.Normal]
+shape = 500        # Unit Width, measured in 1/1000 em.
+menu  = 5          # Width grade for the font's names.
+css   = "normal" # "font-stretch' property of webfont CSS.
+#
+# [buildPlans.IosevkaClassy.widths.Condensed]
+# shape = 500        # Unit Width, measured in 1/1000 em.
+# menu  = 4          # Width grade for the font's names.
+# css   = "condensed"   # "font-stretch' property of webfont CSS.
+
+# End width section
+###################################################################################################
+
+###################################################################################################
+# Character Exclusion
+# Specify character ranges in the section below to exclude certain characters from the font being
+# built. Remove this section when this feature is not needed.
+
+# [buildPlans.IosevkaClassy.excludeChars]
+# ranges = [[10003, 10008]]
+
+# End character exclusion
+###################################################################################################
+
+###################################################################################################
+# Compatibility Ligatures
+# Certain applications like Emacs does not support proper programming liagtures provided by
+# OpenType, but can support ligatures provided by PUA codepoints. Therefore you can edit the
+# following section to build PUA characters that are generated from the OpenType ligatures.
+# Remove this section when compatibility ligatures are not needed.
+
+# [[buildPlans.IosevkaClassy.compatibilityLigatures]]
+# unicode = 57600 # 0xE100
+# featureTag = 'calt'
+# sequence = '<*>'
+
+# End compatibility ligatures section
+###################################################################################################
+
+###################################################################################################
+# Metric overrides
+# Certain metrics like line height (leading) could be overridden in your build plan file.
+# Edit the values to change the metrics. Remove this section when overriding is not needed.
+
+# [buildPlans.IosevkaClassy.metricOverride]
+# leading = 1250
+# winMetricAscenderPad = 0
+# winMetricDescenderPad = 0
+# powerlineScaleY = 1
+# powerlineScaleX = 1
+# powerlineShiftY = 0
+# powerlineShiftX = 0
+
+# End metric override section
+###################################################################################################
+
+[buildPlans.IosevkaCozy]      # <IosevkaCustom> is your plan name
+family = "Iosevka Cozy"        # Font menu family name
+spacing = "term"               # Optional; Values: `normal`, `term`, `fontconfig-mono`, or `fixed`
+serifs = "sans"                  # Optional; Values: `sans` or `slab`
+exportGlyphNames = true       # Set this to true for ligature support in Kitty (increased file size)
+
+webfontFormats = ['TTF', 'WOFF2']
+
+[buildPlans.IosevkaCozy.metricOverride]
+leading = 1250
+xHeight = 520
+
+###################################################################################################
+# Configure variants
+
+# Optional; Whether to inherit a `ss##` variant
+# [buildPlans.IosevkaCozy.variants]
+# inherits = "ss01"
+
+# Optional; Configure single character's variant
+# [buildPlans.IosevkaCozy.variants.design]
+# g = 'single-storey-serifless'
+
+# Optional; Configure single character's variant for Upright and Oblique; Overrides [design]
+# [buildPlans.IosevkaCozy.variants.upright]
+# i = 'zshaped'
+# l = 'zshaped'
+
+# Optional; Configure single character's variant for Italic only; Overrides [design]
+# [buildPlans.IosevkaCozy.variants.italic]
+# i = 'tailed-serifed'
+# l = 'tailed-serifed'
+
+# End variant section
+###################################################################################################
+
+###################################################################################################
+# Configure ligations
+
+[buildPlans.IosevkaCozy.ligations]
+inherits = "dlig"   # Optional; inherits an existing ligation set
+
+[buildPlans.IosevkaCozy.variants.design]
+capital-a = "round-top-serifless"
+capital-b = "more-asymmetric-serifless"
+capital-c = "serifless"
+capital-d = "more-rounded-serifless"
+capital-e = "serifless"
+capital-f = "serifless"
+capital-g = "toothed-serifless-hookless"
+capital-h = "serifless"
+capital-i = "serifed"
+capital-j = "serifless"
+capital-k = "curly-serifless"
+capital-l = "serifless"
+capital-m = "slanted-sides-hanging-serifless"
+capital-n = "standard-serifless"
+capital-p = "closed-serifless"
+capital-q = "horizontal-tailed"
+capital-r = "curly-serifless"
+capital-s = "serifless"
+capital-t = "serifless"
+capital-u = "toothless-rounded-serifless"
+capital-v = "curly-serifless"
+capital-w = "straight-serifless"
+capital-x = "curly-serifless"
+capital-y = "curly-serifless"
+capital-z = "curly-serifless"
+
+a = "double-storey-toothless-corner"
+b = "toothless-rounded-serifless"
+c = "serifless"
+d = "toothless-rounded-serifless"
+e = "flat-crossbar"
+f = "serifless"
+g = "single-storey-earless-corner"
+h = "straight-serifless"
+i = "serifed-asymmetric"
+j = "serifless"
+k = "curly-serifless"
+l = "serifed-semi-tailed"
+m = "earless-rounded-double-arch-short-leg-serifless"
+n = "earless-corner-straight-serifless"
+p = "earless-rounded-serifless"
+q = "earless-rounded-straight-serifless"
+r = "serifless"
+s = "serifless"
+t = "bent-hook"
+u = "toothless-rounded-serifless"
+v = "curly-serifless"
+w = "straight-serifless"
+x = "curly-serifless"
+y = "curly-turn-serifless"
+z = "curly-serifless"
+
+one = "no-base-long-top-serif"
+two = "straight-neck-serifless"
+three = "flat-top-serifless"
+four = "semi-open-non-crossing-serifless"
+five = "upright-arched-serifless"
+six = "open-contour"
+seven = "bend-serifless"
+eight = "two-circles"
+nine = "open-contour"
+zero = "oval-slashed-split"
+
+underscore = "below_baseline"
+caret = "high"
+
+paren = "normal"
+brace = "curly"
+number-sign = "upright"
+at = "threefold"
+ampersand = "closed"
+dollar = "open"
+cent = "open"
+percent = "rings-continuous-slash"
+asterisk = "penta-high"
+question = "corner-flat-hooked"
+
+lig-ltgteq = "flat"
+lig-neq = "slightly-slanted"
+lig-equal-chain = "with-notch"
+lig-hyphen-chain = "with-notch"
+lig-plus-chain = "without-notch"
+lig-double-arrow-bar = "with-notch"
+lig-single-arrow-bar = "without-notch"
+
+[buildPlans.IosevkaCozy.variants.italic]
+a = "single-storey-earless-corner-serifless"
+f = "tailed"
+i = "tailed-serifed"
+k = "cursive-serifless"
+# l = "tailed-serifed"
+q = "earless-rounded-diagonal-tailed-serifless"
+v = "cursive-serifless"
+
+# End ligation section
+###################################################################################################
+
+
+###################################################################################################
+# Override default building weights
+# When buildPlans.<plan name>.weights is absent, all weights would built and mapped to
+# default values.
+# IMPORTANT : Currently "menu" and "css" property only support numbers between 0 and 1000.
+#             and "shape" properly only supports number between 100 and 900 (inclusive).
+#             If you decide to use custom weights you have to define all the weights you
+#             plan to use otherwise they will not be built.
+
+[buildPlans.IosevkaCozy.weights.Light]
+shape = 300  # Weight for glyph shapes.
+menu  = 300  # Weight for the font's names.
+css   = 300  # Weight for webfont CSS.
+
+[buildPlans.IosevkaCozy.weights.Regular]
+shape = 400  # Weight for glyph shapes.
+menu  = 400  # Weight for the font's names.
+css   = 400  # Weight for webfont CSS.
+#
+[buildPlans.IosevkaCozy.weights.Book]
+shape = 450
+menu  = 450  # Use 450 here to name the font's weight "Book"
+css   = 450
+
+[buildPlans.IosevkaCozy.weights.SemiBold]
+shape = 600
+menu  = 600
+css   = 600
+#
+[buildPlans.IosevkaCozy.weights.Bold]
+shape = 700
+menu  = 700
+css   = 700
+
+# End weight section
+###################################################################################################
+
+###################################################################################################
+# Override default building slope sets
+# When this section is absent, all slopes would be built.
+
+# [buildPlans.IosevkaCozy.slopes.Upright]
+# angle = 0             # Angle in degrees. Valid range [0, 15]
+# shape = "upright"     # Slope grade used for shape selection.  `upright` | `oblique` | `italic`
+# menu  = "upright"     # Slope grade used for naming.           `upright` | `oblique` | `italic`
+# css   = "normal"      # Slope grade used for webfont CSS.      `normal`  | `oblique` | `italic`
+#
+# [buildPlans.IosevkaCozy.slopes.Oblique]
+# angle = 9.4
+# shape = "oblique"
+# menu  = "oblique"
+# css   = "oblique"
+#
+# [buildPlans.IosevkaCozy.slopes.Italic]
+# angle = 9.4
+# shape = "italic"
+# menu  = "italic"
+# css   = "italic"
+# End slope section
+###################################################################################################
+
+###################################################################################################
+# Override default building widths
+# When buildPlans.<plan name>.widths is absent, all widths would built and mapped to
+# default values.
+# IMPORTANT : Currently "shape" property only supports numbers between 434 and 664 (inclusive),
+#             while "menu" only supports integers between 1 and 9 (inclusive).
+#             The "shape" parameter specifies the unit width, measured in 1/1000 em. The glyphs'
+#             width are equal to, or a simple multiple of the unit width.
+#             If you decide to use custom widths you have to define all the widths you plan to use,
+#             otherwise they will not be built.
+
+[buildPlans.IosevkaCozy.widths.Normal]
+shape = 550        # Unit Width, measured in 1/1000 em.
+menu  = 5          # Width grade for the font's names.
+css   = "normal" # "font-stretch' property of webfont CSS.
+#
+# [buildPlans.IosevkaCozy.widths.Condensed]
+# shape = 500        # Unit Width, measured in 1/1000 em.
+# menu  = 4          # Width grade for the font's names.
+# css   = "condensed"   # "font-stretch' property of webfont CSS.
+
+# End width section
+###################################################################################################
+
+###################################################################################################
+# Character Exclusion
+# Specify character ranges in the section below to exclude certain characters from the font being
+# built. Remove this section when this feature is not needed.
+
+# [buildPlans.IosevkaCozy.excludeChars]
+# ranges = [[10003, 10008]]
+
+# End character exclusion
+###################################################################################################
+
+###################################################################################################
+# Compatibility Ligatures
+# Certain applications like Emacs does not support proper programming liagtures provided by
+# OpenType, but can support ligatures provided by PUA codepoints. Therefore you can edit the
+# following section to build PUA characters that are generated from the OpenType ligatures.
+# Remove this section when compatibility ligatures are not needed.
+
+# [[buildPlans.IosevkaCozy.compatibilityLigatures]]
+# unicode = 57600 # 0xE100
+# featureTag = 'calt'
+# sequence = '<*>'
+
+# End compatibility ligatures section
+###################################################################################################
+
+###################################################################################################
+# Metric overrides
+# Certain metrics like line height (leading) could be overridden in your build plan file.
+# Edit the values to change the metrics. Remove this section when overriding is not needed.
+
+# [buildPlans.IosevkaCozy.metricOverride]
+# leading = 1250
+# winMetricAscenderPad = 0
+# winMetricDescenderPad = 0
+# powerlineScaleY = 1
+# powerlineScaleX = 1
+# powerlineShiftY = 0
+# powerlineShiftX = 0
+
+# End metric override section
+###################################################################################################
+
+[buildPlans.Iosevka]      # <IosevkaCustom> is your plan name
+family = "Iosevka "        # Font menu family name
+spacing = "term"               # Optional; Values: `normal`, `term`, `fontconfig-mono`, or `fixed`
+serifs = "sans"                  # Optional; Values: `sans` or `slab`
+exportGlyphNames = true       # Set this to true for ligature support in Kitty (increased file size)
+
+webfontFormats = ['TTF', 'WOFF2']
+
+[buildPlans.Iosevka.metricOverride]
+leading = 1250
+xHeight = 520
+
+###################################################################################################
+# Configure variants
+
+# Optional; Whether to inherit a `ss##` variant
+# [buildPlans.Iosevka.variants]
+# inherits = "ss01"
+
+# Optional; Configure single character's variant
+# [buildPlans.Iosevka.variants.design]
+# g = 'single-storey-serifless'
+
+# Optional; Configure single character's variant for Upright and Oblique; Overrides [design]
+# [buildPlans.Iosevka.variants.upright]
+# i = 'zshaped'
+# l = 'zshaped'
+
+# Optional; Configure single character's variant for Italic only; Overrides [design]
+# [buildPlans.Iosevka.variants.italic]
+# i = 'tailed-serifed'
+# l = 'tailed-serifed'
+
+# End variant section
+###################################################################################################
+
+###################################################################################################
+# Configure ligations
+
+[buildPlans.Iosevka.ligations]
+inherits = "dlig"   # Optional; inherits an existing ligation set
+
+# End ligation section
+###################################################################################################
+
+
+###################################################################################################
+# Override default building weights
+# When buildPlans.<plan name>.weights is absent, all weights would built and mapped to
+# default values.
+# IMPORTANT : Currently "menu" and "css" property only support numbers between 0 and 1000.
+#             and "shape" properly only supports number between 100 and 900 (inclusive).
+#             If you decide to use custom weights you have to define all the weights you
+#             plan to use otherwise they will not be built.
+
+[buildPlans.Iosevka.weights.Light]
+shape = 300  # Weight for glyph shapes.
+menu  = 300  # Weight for the font's names.
+css   = 300  # Weight for webfont CSS.
+
+[buildPlans.Iosevka.weights.Regular]
+shape = 400  # Weight for glyph shapes.
+menu  = 400  # Weight for the font's names.
+css   = 400  # Weight for webfont CSS.
+#
+[buildPlans.Iosevka.weights.Book]
+shape = 450
+menu  = 450  # Use 450 here to name the font's weight "Book"
+css   = 450
+
+[buildPlans.Iosevka.weights.SemiBold]
+shape = 600
+menu  = 600
+css   = 600
+#
+[buildPlans.Iosevka.weights.Bold]
+shape = 700
+menu  = 700
+css   = 700
+
+# End weight section
+###################################################################################################
+
+###################################################################################################
+# Override default building slope sets
+# When this section is absent, all slopes would be built.
+
+# [buildPlans.Iosevka.slopes.Upright]
+# angle = 0             # Angle in degrees. Valid range [0, 15]
+# shape = "upright"     # Slope grade used for shape selection.  `upright` | `oblique` | `italic`
+# menu  = "upright"     # Slope grade used for naming.           `upright` | `oblique` | `italic`
+# css   = "normal"      # Slope grade used for webfont CSS.      `normal`  | `oblique` | `italic`
+#
+# [buildPlans.Iosevka.slopes.Oblique]
+# angle = 9.4
+# shape = "oblique"
+# menu  = "oblique"
+# css   = "oblique"
+#
+# [buildPlans.Iosevka.slopes.Italic]
+# angle = 9.4
+# shape = "italic"
+# menu  = "italic"
+# css   = "italic"
+# End slope section
+###################################################################################################
+
+###################################################################################################
+# Override default building widths
+# When buildPlans.<plan name>.widths is absent, all widths would built and mapped to
+# default values.
+# IMPORTANT : Currently "shape" property only supports numbers between 434 and 664 (inclusive),
+#             while "menu" only supports integers between 1 and 9 (inclusive).
+#             The "shape" parameter specifies the unit width, measured in 1/1000 em. The glyphs'
+#             width are equal to, or a simple multiple of the unit width.
+#             If you decide to use custom widths you have to define all the widths you plan to use,
+#             otherwise they will not be built.
+
+[buildPlans.Iosevka.widths.Normal]
+shape = 500        # Unit Width, measured in 1/1000 em.
+menu  = 5          # Width grade for the font's names.
+css   = "normal" # "font-stretch' property of webfont CSS.
+#
+# [buildPlans.Iosevka.widths.Condensed]
+# shape = 500        # Unit Width, measured in 1/1000 em.
+# menu  = 4          # Width grade for the font's names.
+# css   = "condensed"   # "font-stretch' property of webfont CSS.
+
+# End width section
+###################################################################################################
+
+###################################################################################################
+# Character Exclusion
+# Specify character ranges in the section below to exclude certain characters from the font being
+# built. Remove this section when this feature is not needed.
+
+# [buildPlans.Iosevka.excludeChars]
+# ranges = [[10003, 10008]]
+
+# End character exclusion
+###################################################################################################
+
+###################################################################################################
+# Compatibility Ligatures
+# Certain applications like Emacs does not support proper programming liagtures provided by
+# OpenType, but can support ligatures provided by PUA codepoints. Therefore you can edit the
+# following section to build PUA characters that are generated from the OpenType ligatures.
+# Remove this section when compatibility ligatures are not needed.
+
+# [[buildPlans.Iosevka.compatibilityLigatures]]
+# unicode = 57600 # 0xE100
+# featureTag = 'calt'
+# sequence = '<*>'
+
+# End compatibility ligatures section
+###################################################################################################
+
+###################################################################################################
+# Metric overrides
+# Certain metrics like line height (leading) could be overridden in your build plan file.
+# Edit the values to change the metrics. Remove this section when overriding is not needed.
+
+# [buildPlans.Iosevka.metricOverride]
+# leading = 1250
+# winMetricAscenderPad = 0
+# winMetricDescenderPad = 0
+# powerlineScaleY = 1
+# powerlineScaleX = 1
+# powerlineShiftY = 0
+# powerlineShiftX = 0
+
+# End metric override section
+###################################################################################################
+
