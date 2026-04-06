@@ -92,7 +92,7 @@ h = "straight-serifless"
 i = "serifed"
 j = "serifed"
 k = "curly-serifless"
-l = "serifed"
+l = "zshaped"
 m = "serifless"
 n = "straight-serifless"
 p = "eared-serifless"
@@ -146,7 +146,7 @@ e = "rounded"
 f = "tailed"
 g = "single-storey-serifless"
 k = "cursive-serifless"
-l = "tailed-serifed"
+l = "zshaped"
 
 # End ligation section
 ###################################################################################################
