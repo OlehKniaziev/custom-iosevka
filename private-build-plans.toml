@@ -962,7 +962,7 @@ caret = "high"
 ascii-grave = "straight"
 ascii-single-quote = "straight"
 
-paren = "flat-arc"
+paren = "large-contour"
 brace = "curly-flat-boundary"
 
 guillemet = "straight"
