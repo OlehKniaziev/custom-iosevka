@@ -963,7 +963,7 @@ ascii-grave = "straight"
 ascii-single-quote = "straight"
 
 paren = "large-contour"
-brace = "curly-flat-boundary"
+brace = "straight"
 
 guillemet = "straight"
 number-sign = "upright"
