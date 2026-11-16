@@ -263,7 +263,7 @@ webfontFormats = ['TTF', 'WOFF2']
 
 [buildPlans.IosevkaCozy.metricOverride]
 leading = 1250
-xHeight = 525
+xHeight = 520
 
 ###################################################################################################
 # Configure variants
